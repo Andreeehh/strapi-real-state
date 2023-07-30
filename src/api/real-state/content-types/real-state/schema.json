@@ -1,0 +1,100 @@
+{
+  "kind": "collectionType",
+  "collectionName": "real_states",
+  "info": {
+    "singularName": "real-state",
+    "pluralName": "real-states",
+    "displayName": "RealState",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 50
+    },
+    "cover": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "streetName": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "minLength": 3
+    },
+    "neighborhood": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "size": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "bedrooms": {
+      "type": "integer",
+      "default": 1,
+      "required": true,
+      "min": 1
+    },
+    "bathrooms": {
+      "type": "integer",
+      "default": 1,
+      "required": true,
+      "min": 1
+    },
+    "parkingSpaces": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "streetNumber": {
+      "type": "string",
+      "required": false,
+      "minLength": 1
+    },
+    "addressType": {
+      "type": "enumeration",
+      "enum": [
+        "Casa",
+        "Apartamento",
+        "Sítio/Chácara/Chácara",
+        "Kitnet",
+        "Studio",
+        "Sobrado",
+        "Casa de Condomínio",
+        "Flat"
+      ],
+      "default": "Casa",
+      "required": true
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
