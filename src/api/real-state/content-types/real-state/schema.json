@@ -95,6 +95,17 @@
     "notes": {
       "type": "string",
       "minLength": 1
+    },
+    "rentalValue": {
+      "type": "decimal"
+    },
+    "purchaseValue": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 5
     }
   }
 }
